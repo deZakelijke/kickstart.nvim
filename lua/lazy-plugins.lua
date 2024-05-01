@@ -37,6 +37,8 @@ require('lazy').setup({
 
   require 'kickstart.plugins.treesitter',
 
+  require 'kickstart.plugins.treesitter-context',
+
   require 'kickstart.plugins.neo-tree',
 
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
