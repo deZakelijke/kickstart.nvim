@@ -47,7 +47,7 @@ require('lazy').setup({
 
   -- 'linux-cultist/venv-selector.nvim'
 
-  -- lazygit
+  require 'kickstart.plugins.lazygit',
 
   -- copilot
 
