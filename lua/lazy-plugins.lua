@@ -16,7 +16,7 @@ require('lazy').setup({
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
 
-  require 'kickstart.plugins.gitsigns',
+  -- require 'kickstart.plugins.gitsigns',
 
   require 'kickstart.plugins.which-key',
 
@@ -28,15 +28,30 @@ require('lazy').setup({
 
   require 'kickstart.plugins.cmp',
 
-  require 'kickstart.plugins.tokyonight',
+  -- require 'kickstart.plugins.tokyonight',
+  require 'kickstart.plugins.oceanic-next',
 
   require 'kickstart.plugins.todo-comments',
 
-  require 'kickstart.plugins.mini',
+  -- require 'kickstart.plugins.mini',
 
   require 'kickstart.plugins.treesitter',
 
-  require 'kickstart.plugins.neo-tree',
+  require 'kickstart.plugins.treesitter-context',
+
+  -- require 'kickstart.plugins.neo-tree',
+
+  require 'kickstart.plugins.harpoon',
+
+  require 'kickstart.plugins.undotree',
+
+  -- 'linux-cultist/venv-selector.nvim'
+
+  require 'kickstart.plugins.lazygit',
+
+  require 'kickstart.plugins.copilot',
+
+  require 'kickstart.plugins.nerdtree',
 
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   --    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
