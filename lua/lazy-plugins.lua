@@ -51,7 +51,7 @@ require('lazy').setup({
 
   require 'kickstart.plugins.copilot',
 
-  -- nerdtree instead of neo-tree ?
+  require 'kickstart.plugins.nerdtree',
 
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   --    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
