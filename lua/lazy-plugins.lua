@@ -41,7 +41,7 @@ require('lazy').setup({
 
   -- require 'kickstart.plugins.neo-tree',
 
-  -- harpoon
+  require 'kickstart.plugins.harpoon',
 
   -- undotree
 
