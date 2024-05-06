@@ -49,7 +49,7 @@ require('lazy').setup({
 
   require 'kickstart.plugins.lazygit',
 
-  -- copilot
+  require 'kickstart.plugins.copilot',
 
   -- nerdtree instead of neo-tree ?
 
