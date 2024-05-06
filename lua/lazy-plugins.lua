@@ -43,7 +43,7 @@ require('lazy').setup({
 
   require 'kickstart.plugins.harpoon',
 
-  -- undotree
+  require 'kickstart.plugins.undotree',
 
   -- 'linux-cultist/venv-selector.nvim'
 
