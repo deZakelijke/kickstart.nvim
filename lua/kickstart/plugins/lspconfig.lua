@@ -89,6 +89,12 @@ return { -- LSP Configuration & Plugins
         -- or a suggestion from your LSP for this to activate.
         map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
 
+        -- Show diagnostics for the current line in a floating window
+        map('<leader>sd', vim.diagnostics.open_float, '[S]how [D]iagnostics')
+
+        -- Show diagnostics for the current buffer in a list
+        map('<leader>sl', vim.diagnostics.setloclist, '[S]how diagnostics [L]ist')
+
         -- Opens a popup that displays documentation about the word under your cursor
         --  See `:help K` for why this keymap.
         map('K', vim.lsp.buf.hover, 'Hover Documentation')
