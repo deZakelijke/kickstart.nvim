@@ -1,4 +1,4 @@
-return {
+return { -- Run lazygit from within neovim as a floating window
   'kdheepak/lazygit.nvim',
   dependencies = {
     'nvim-telescope/telescope.nvim',

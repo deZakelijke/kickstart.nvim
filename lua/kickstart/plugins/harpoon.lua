@@ -1,4 +1,4 @@
-return {
+return { -- Move between up to four files with F1-F4
   'ThePrimeagen/harpoon',
   branch = 'harpoon2',
   dependencies = {

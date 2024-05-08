@@ -1,4 +1,4 @@
-return {
+return { -- Display the current context of the cursor position
   'nvim-treesitter/nvim-treesitter-context',
   build = ':TSContextEnable',
   config = function(_, opts) end,
