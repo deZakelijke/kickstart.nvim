@@ -164,7 +164,7 @@ return { -- LSP Configuration & Plugins
       -- clangd = {},
       -- gopls = {},
       pyright = {},
-      ruff = {},
+      ruff_lsp = {},
       yamlls = {},
       dockerls = {},
       docker_compose_language_service = {},
