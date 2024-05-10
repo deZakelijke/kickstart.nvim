@@ -45,7 +45,7 @@ require('lazy').setup({
 
   require 'kickstart.plugins.undotree',
 
-  -- 'linux-cultist/venv-selector.nvim'
+  require 'kickstart.plugins.venv-selector',
 
   require 'kickstart.plugins.lazygit',
 
