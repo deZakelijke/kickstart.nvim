@@ -14,18 +14,18 @@ return { -- Move between up to four files with F1-F4
       harpoon.ui:toggle_quick_menu(harpoon:list())
     end)
 
-    vim.keymap.set('n', '<F1>', function()
+    vim.keymap.set('n', '<leader>hq', function()
       harpoon:list():select(1)
-    end)
-    vim.keymap.set('n', '<F2>', function()
+    end, { desc = '[H]arpoon Select [Q] first' })
+    vim.keymap.set('n', '<leader>hw', function()
       harpoon:list():select(2)
-    end)
-    vim.keymap.set('n', '<F3>', function()
+    end, { desc = '[H]arpoon Select [W] second' })
+    vim.keymap.set('n', '<leader>he', function()
       harpoon:list():select(3)
-    end)
-    vim.keymap.set('n', '<F4>', function()
+    end, { desc = '[H]arpoon Select [E] third' })
+    vim.keymap.set('n', '<leader>hr', function()
       harpoon:list():select(4)
-    end)
+    end, { desc = '[H]arpoon Select [R] fourth' })
   end,
 }
 -- vim: ts=2 sts=2 sw=2 et
