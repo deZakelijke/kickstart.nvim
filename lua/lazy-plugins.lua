@@ -39,8 +39,6 @@ require('lazy').setup({
 
   require 'kickstart.plugins.treesitter-context',
 
-  -- require 'kickstart.plugins.neo-tree',
-
   require 'kickstart.plugins.harpoon',
 
   require 'kickstart.plugins.undotree',
@@ -51,7 +49,7 @@ require('lazy').setup({
 
   require 'kickstart.plugins.copilot',
 
-  require 'kickstart.plugins.nerdtree',
+  require 'kickstart.plugins.oil',
 
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   --    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
