@@ -49,6 +49,8 @@ require('lazy').setup({
 
   require 'kickstart.plugins.copilot',
 
+  require 'kickstart.plugins.copilot_chat',
+
   require 'kickstart.plugins.oil',
 
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
