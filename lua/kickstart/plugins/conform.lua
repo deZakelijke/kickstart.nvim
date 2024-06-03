@@ -1,6 +1,7 @@
 return { -- Autoformat
   'stevearc/conform.nvim',
   lazy = false,
+  tag = 'v5.8.0',
   keys = {
     {
       '<leader>fb',
