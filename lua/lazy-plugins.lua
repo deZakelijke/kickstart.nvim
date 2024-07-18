@@ -22,6 +22,8 @@ require('lazy').setup({
 
   require 'kickstart.plugins.telescope',
 
+  require 'kickstart.plugins.telescope-undo',
+
   require 'kickstart.plugins.lspconfig',
 
   require 'kickstart.plugins.conform',
@@ -40,8 +42,6 @@ require('lazy').setup({
   require 'kickstart.plugins.treesitter-context',
 
   require 'kickstart.plugins.harpoon',
-
-  require 'kickstart.plugins.undotree',
 
   require 'kickstart.plugins.venv-selector',
 
