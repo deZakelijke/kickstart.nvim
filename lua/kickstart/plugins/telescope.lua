@@ -69,6 +69,12 @@ return { -- Fuzzy Finder (files, lsp, etc)
       ':lua require("telescope.builtin").find_files( {find_command = {"rg", "--files", "--hidden", "-g", "!.git"}})<cr>',
       { desc = '[F]ind [H]idden Files' }
     )
+    vim.keymap.set(
+      'n',
+      '<leader>fi',
+      ':lua require("telescope.builtin").find_files( {find_command = {"rg", "--files", "--hidden", "--no-ignore", "-g", "!.git"}})<cr>',
+      { desc = '[F]ind [I]gnored files' }
+    )
     vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = '[F]ind by [G]rep' })
     vim.keymap.set('n', '<leader>fw', builtin.grep_string, { desc = '[f]ind current [W]ord' })
 
