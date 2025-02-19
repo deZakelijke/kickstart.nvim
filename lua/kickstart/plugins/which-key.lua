@@ -28,6 +28,25 @@ return { -- Useful plugin to show you pending keybinds.
     require('which-key').register({
       { '<leader>h', desc = 'Git [H]unk', mode = 'v' },
     }, { mode = 'v' })
+    -- NOTE: these are probably wrong
+    -- require('which-key').register {
+    --   { '', group = '[S]earch' },
+    --   { '', desc = '<leader>w_', hidden = true },
+    --   { '', group = '[T]oggle' },
+    --   { '', desc = '<leader>s_', hidden = true },
+    --   { '', group = '[D]ocument' },
+    --   { '', group = 'Git [H]unk' },
+    --   { '', desc = '<leader>t_', hidden = true },
+    --   { '', desc = '<leader>r_', hidden = true },
+    --   { '', group = '[W]orkspace' },
+    --   { '', desc = '<leader>d_', hidden = true },
+    --   { '', group = '[R]ename' },
+    --   { '', desc = '<leader>h_', hidden = true },
+    -- }
+    -- -- visual mode
+    -- require('which-key').register {
+    --   { '', desc = '<leader>h', mode = 'v' },
+    -- }
   end,
 }
 -- vim: ts=2 sts=2 sw=2 et
