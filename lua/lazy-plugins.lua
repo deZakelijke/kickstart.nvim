@@ -41,6 +41,8 @@ require('lazy').setup({
 
   require 'kickstart.plugins.treesitter-context',
 
+  require 'kickstart.plugins.trouble',
+
   require 'kickstart.plugins.harpoon',
 
   require 'kickstart.plugins.venv-selector',
