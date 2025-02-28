@@ -1,3 +1,4 @@
+-- NOTE: I don't really use this anymore
 return { -- Automatically formatted python docstrings
   'heavenshell/vim-pydocstring',
   config = function()
