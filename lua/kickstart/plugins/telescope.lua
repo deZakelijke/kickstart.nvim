@@ -24,6 +24,74 @@ return { -- Fuzzy Finder (files, lsp, etc)
     -- Useful for getting pretty icons, but requires a Nerd Font.
     { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
   },
+  keys = {
+    {
+      '<leader>ff',
+      function()
+        require('telescope.builtin').find_files()
+      end,
+      desc = '[F]ind [F]iles',
+    },
+    {
+      '<leader>fh',
+      function()
+        require('telescope.builtin').find_files {
+          find_command = { 'rg', '--files', '--hidden', '-g', '!.git' },
+        }
+      end,
+      desc = '[F]ind [H]idden Files',
+    },
+    {
+      '<leader>fi',
+      function()
+        require('telescope.builtin').find_files {
+          find_command = { 'rg', '--files', '--hidden', '--no-ignore', '-g', '!.git' },
+        }
+      end,
+      desc = '[F]ind [I]gnored files',
+    },
+    {
+      '<leader>fg',
+      function()
+        require('telescope.builtin').live_grep()
+      end,
+      desc = '[F]ind by [G]rep',
+    },
+    {
+      '<leader>fw',
+      function()
+        require('telescope.builtin').grep_string()
+      end,
+      desc = '[f]ind current [W]ord',
+    },
+    {
+      '<leader>/',
+      function()
+        require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+          winblend = 10,
+          previewer = false,
+        })
+      end,
+      desc = '[/] Fuzzily search in current buffer',
+    },
+    {
+      '<leader>f/',
+      function()
+        require('telescope.builtin').live_grep {
+          grep_open_files = true,
+          prompt_title = 'Live Grep in Open Files',
+        }
+      end,
+      desc = '[F]earch [/] in Open Files',
+    },
+    {
+      '<leader>fn',
+      function()
+        require('telescope.builtin').find_files { cwd = vim.fn.stdpath 'config' }
+      end,
+      desc = '[F]earch [N]eovim files',
+    },
+  },
   config = function()
     -- Telescope is a fuzzy finder that comes with a lot of different things that
     -- it can fuzzy find! It's more than just a "file finder", it can search
@@ -59,55 +127,6 @@ return { -- Fuzzy Finder (files, lsp, etc)
     -- Enable Telescope extensions if they are installed
     pcall(require('telescope').load_extension, 'fzf')
     pcall(require('telescope').load_extension, 'ui-select')
-
-    -- See `:help telescope.builtin`
-    local builtin = require 'telescope.builtin'
-    vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = '[F]ind [F]iles' })
-    vim.keymap.set(
-      'n',
-      '<leader>fh',
-      ':lua require("telescope.builtin").find_files( {find_command = {"rg", "--files", "--hidden", "-g", "!.git"}})<cr>',
-      { desc = '[F]ind [H]idden Files' }
-    )
-    vim.keymap.set(
-      'n',
-      '<leader>fi',
-      ':lua require("telescope.builtin").find_files( {find_command = {"rg", "--files", "--hidden", "--no-ignore", "-g", "!.git"}})<cr>',
-      { desc = '[F]ind [I]gnored files' }
-    )
-    vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = '[F]ind by [G]rep' })
-    vim.keymap.set('n', '<leader>fw', builtin.grep_string, { desc = '[f]ind current [W]ord' })
-
-    -- vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
-    -- vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
-    -- vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
-    -- vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
-    -- vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
-    -- vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
-    -- vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
-
-    -- Slightly advanced example of overriding default behavior and theme
-    vim.keymap.set('n', '<leader>/', function()
-      -- You can pass additional configuration to Telescope to change the theme, layout, etc.
-      builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-        winblend = 10,
-        previewer = false,
-      })
-    end, { desc = '[/] Fuzzily search in current buffer' })
-
-    -- It's also possible to pass additional configuration options.
-    --  See `:help telescope.builtin.live_grep()` for information about particular keys
-    vim.keymap.set('n', '<leader>s/', function()
-      builtin.live_grep {
-        grep_open_files = true,
-        prompt_title = 'Live Grep in Open Files',
-      }
-    end, { desc = '[S]earch [/] in Open Files' })
-
-    -- Shortcut for searching your Neovim configuration files
-    vim.keymap.set('n', '<leader>sn', function()
-      builtin.find_files { cwd = vim.fn.stdpath 'config' }
-    end, { desc = '[S]earch [N]eovim files' })
   end,
 }
 -- vim: ts=2 sts=2 sw=2 et
