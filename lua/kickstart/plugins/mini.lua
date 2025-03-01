@@ -1,6 +1,6 @@
 return { -- Collection of various small independent plugins/modules
   'echasnovski/mini.nvim',
-  tag = 'v0.13.0',
+  tag = 'v0.15.0',
   config = function()
     -- Better Around/Inside textobjects
     --
@@ -34,6 +34,7 @@ return { -- Collection of various small independent plugins/modules
 
     -- ... and there is more!
     --  Check out: https://github.com/echasnovski/mini.nvim
+    require('mini.icons').setup()
   end,
 }
 -- vim: ts=2 sts=2 sw=2 et
