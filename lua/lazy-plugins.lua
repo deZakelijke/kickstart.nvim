@@ -55,8 +55,11 @@ require('lazy').setup({
 
   require 'kickstart.plugins.copilot_chat',
 
+  require 'kickstart.plugins.avante',
+
   require 'kickstart.plugins.oil',
 
+  -- Do I still need this? <C-l> does this as well.
   require 'kickstart.plugins.vim-pydocstring',
 
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
