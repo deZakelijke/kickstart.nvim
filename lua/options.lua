@@ -65,3 +65,7 @@ vim.opt.inccommand = 'split'
 
 -- Show which line your cursor is on
 vim.opt.cursorline = false
+
+-- recommended by Avante
+-- views can only be fully collapsed with the global statusline
+vim.opt.laststatus = 3
