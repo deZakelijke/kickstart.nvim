@@ -28,6 +28,8 @@ require('lazy').setup({
 
   require 'kickstart.plugins.conform',
 
+  require 'kickstart.plugins.snacks',
+
   require 'kickstart.plugins.cmp',
 
   require 'kickstart.plugins.tokyonight',
