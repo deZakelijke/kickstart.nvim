@@ -6,11 +6,11 @@ return { -- Move between up to four files with F1-F4
   },
   keys = {
     {
-      '<leader>a',
+      '<leader>ha',
       function()
         require('harpoon').list():add()
       end,
-      desc = '[A]dd file to harpoon',
+      desc = '[H]arpoon [A]dd file to list',
     },
     {
       '<C-e>',
