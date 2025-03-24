@@ -8,7 +8,7 @@ return { -- Move between up to four files with F1-F4
     {
       '<leader>ha',
       function()
-        require('harpoon').list():add()
+        require('harpoon'):list():add()
       end,
       desc = '[H]arpoon [A]dd file to list',
     },
