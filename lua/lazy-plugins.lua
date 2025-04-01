@@ -59,8 +59,7 @@ require('lazy').setup({
 
   require 'kickstart.plugins.oil',
 
-  -- Do I still need this? <C-l> does this as well.
-  -- require 'kickstart.plugins.vim-pydocstring',
+  require 'kickstart.plugins.vim-pydocstring',
 
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   --    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
