@@ -34,7 +34,7 @@ return { -- Collection of various small independent plugins/modules
 
     -- ... and there is more!
     --  Check out: https://github.com/echasnovski/mini.nvim
-    -- require('mini.icons').setup()
+    require('mini.icons').setup()
   end,
 }
 -- vim: ts=2 sts=2 sw=2 et
