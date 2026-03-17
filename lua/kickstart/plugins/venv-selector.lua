@@ -1,9 +1,9 @@
 return { -- Select a virtual env automatically
-  'linux-cultist/venv-selector.nvim',
+  "linux-cultist/venv-selector.nvim",
   dependencies = {
-    { "nvim-telescope/telescope.nvim", version = "*", dependencies = { "nvim-lua/plenary.nvim" } },
+    { 'nvim-telescope/telescope.nvim', version = '*', dependencies = { 'nvim-lua/plenary.nvim' } },
   },
-  f  ft = "python",
+  ft = "python", -- Load when opening Python files
   keys = {
     { '<leader>vs', '<cmd>VenvSelect<cr>', { desc = '[V]irtual [S]elect' } },
   },

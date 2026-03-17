@@ -168,7 +168,7 @@ return { -- LSP Configuration & Plugins
         cmd = { 'clangd', '--enable-config' },
       },
       -- gopls = {},
-      pyright = {},
+      ty = {},
       ruff = {},
       yamlls = {},
       dockerls = {},

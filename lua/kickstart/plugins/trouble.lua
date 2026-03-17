@@ -1,6 +1,7 @@
 return {
   'folke/trouble.nvim',
-  tag = 'v3.6.0',
+  -- tag = 'v3.7.1',
+  brach = 'main',
   opts = {}, -- for default options, refer to the configuration section for custom setup.
   cmd = 'Trouble',
   keys = {
