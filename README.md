@@ -60,7 +60,7 @@ fork to your machine using one of the commands below, depending on your OS.
 
 
 ```sh
-git clone https://github.com/deZakelijke/kickstart.nvim.git && ln -s kickstart.nvim "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
+git clone git@github.com:deZakelijke/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
 ```
 
 
