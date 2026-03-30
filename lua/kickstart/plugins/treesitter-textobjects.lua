@@ -14,32 +14,46 @@ return {
     -- vim.g.no_go_maps = true
   end,
   config = function()
-    require('nvim-treesitter.config').setup {
-      textobjects = {
-        select = {
-          enable = true,
-          lookahead = true,
-          -- FIX: for some reason, the keymaps don't work.
-          keymaps = {
-            ['a='] = { query = '@assignment.outer', desc = 'Select outer part of an assignment' },
-            ['i='] = { query = '@assignment.inner', desc = 'foo' },
-            ['al'] = { query = '@loop.outer', desc = 'foo' },
-            ['il'] = { query = '@loop.inner', desc = 'foo' },
-          },
-        },
-        move = {
-          enable = true,
-          set_jumps = true,
-          goto_next_start = {
-            [']f'] = { query = '@call.outer', desc = 'Next function call start' },
-            [']m'] = { query = '@function.outer', desc = 'Next method/function def start' },
-            [']c'] = { query = '@class.outer', desc = 'Next class start' },
-            [']i'] = { query = '@conditional.outer', desc = 'Next conditional start' },
-            [']l'] = { query = '@loop.outer', desc = 'Next loop start' },
-          },
-        },
-      },
+    local select = require 'nvim-treesitter-textobjects.select'
+    local move = require 'nvim-treesitter-textobjects.move'
+
+    -- The new main branch API only stores behavioral options via setup().
+    -- Keymaps are NOT auto-registered; they must be set up manually below.
+    require('nvim-treesitter-textobjects').setup {
+      select = { lookahead = true },
+      move = { set_jumps = true },
     }
+
+    -- Select textobjects (visual + operator-pending modes)
+    vim.keymap.set({ 'x', 'o' }, 'a=', function()
+      select.select_textobject '@assignment.outer'
+    end, { desc = 'Select outer part of an assignment' })
+    vim.keymap.set({ 'x', 'o' }, 'i=', function()
+      select.select_textobject '@assignment.inner'
+    end, { desc = 'Select inner part of an assignment' })
+    vim.keymap.set({ 'x', 'o' }, 'al', function()
+      select.select_textobject '@loop.outer'
+    end, { desc = 'Select outer part of a loop' })
+    vim.keymap.set({ 'x', 'o' }, 'il', function()
+      select.select_textobject '@loop.inner'
+    end, { desc = 'Select inner part of a loop' })
+
+    -- Move keymaps
+    vim.keymap.set('n', ']f', function()
+      move.goto_next_start '@call.outer'
+    end, { desc = 'Next function call start' })
+    vim.keymap.set('n', ']m', function()
+      move.goto_next_start '@function.outer'
+    end, { desc = 'Next method/function def start' })
+    vim.keymap.set('n', ']c', function()
+      move.goto_next_start '@class.outer'
+    end, { desc = 'Next class start' })
+    vim.keymap.set('n', ']i', function()
+      move.goto_next_start '@conditional.outer'
+    end, { desc = 'Next conditional start' })
+    vim.keymap.set('n', ']l', function()
+      move.goto_next_start '@loop.outer'
+    end, { desc = 'Next loop start' })
   end,
 }
 -- vim: ts=2 sts=2 sw=2 et
