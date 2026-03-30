@@ -43,6 +43,8 @@ require('lazy').setup({
 
   require 'kickstart.plugins.treesitter-context',
 
+  require 'kickstart.plugins.treesitter-textobjects',
+
   require 'kickstart.plugins.trouble',
 
   require 'kickstart.plugins.harpoon',
