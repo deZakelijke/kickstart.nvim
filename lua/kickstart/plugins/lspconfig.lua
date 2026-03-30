@@ -93,7 +93,7 @@ return { -- LSP Configuration & Plugins
         map('<leader>sd', vim.diagnostic.open_float, '[S]how [D]iagnostics')
 
         -- Show diagnostics for the current buffer in a list
-        map('<leader>sl', vim.diagnostic.setloclist, '[S]how diagnostics [L]ist')
+        map('<leader>sl', vim.diagnostic.setloclist, '[S]how Diagnostics [L]ist')
 
         -- Opens a popup that displays documentation about the word under your cursor
         --  See `:help K` for why this keymap.

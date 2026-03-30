@@ -8,7 +8,7 @@ return { -- Run lazygit from within neovim as a floating window
     {
       '<leader>gg',
       '<cmd>LazyGit<cr>',
-      desc = 'LazyGit',
+      desc = '[G]o to [G]it (LazyGit)',
     },
   },
   config = function()

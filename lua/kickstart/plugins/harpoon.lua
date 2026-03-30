@@ -24,28 +24,28 @@ return { -- Move between up to four files with F1-F4
       function()
         require('harpoon'):list():select(1)
       end,
-      desc = '[H]arpoon Select [Q] first',
+      desc = '[H]arpoon [Q] Select First',
     },
     {
       '<leader>hw',
       function()
         require('harpoon'):list():select(2)
       end,
-      desc = '[H]arpoon Select [W] second',
+      desc = '[H]arpoon [W] Select Second',
     },
     {
       '<leader>he',
       function()
         require('harpoon'):list():select(3)
       end,
-      desc = '[H]arpoon Select [E] third',
+      desc = '[H]arpoon [E] Select Third',
     },
     {
       '<leader>hr',
       function()
         require('harpoon'):list():select(4)
       end,
-      desc = '[H]arpoon Select [R] fourth',
+      desc = '[H]arpoon [R] Select Fourth',
     },
   },
   config = function()

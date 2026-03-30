@@ -9,25 +9,26 @@ return { -- Chat with Copilot
     {
       '<leader>cc',
       vim.cmd.CopilotChatToggle,
-      desc = '[C]opilot [C]hat toggle',
+      desc = '[C]opilot [C]hat Toggle',
     },
     {
       '<leader>ce',
       vim.cmd.CopilotChatExplain,
-      desc = '[C]opilot [E]xplain code selection',
+      desc = '[C]opilot [E]xplain Code Selection',
     },
     {
       '<leader>cd',
       vim.cmd.CopilotChatDocs,
-      desc = '[C]opilot write [D]ocs for selection',
+      desc = '[C]opilot Write [D]ocs',
     },
     {
       '<leader>ct',
       vim.cmd.CopilotChatTests,
-      desc = '[C]opilot write [T]ests for code',
+      desc = '[C]opilot Write [T]ests',
     },
   },
   config = function()
     require('CopilotChat').setup()
   end,
 }
+-- vim: ts=2 sts=2 sw=2 et

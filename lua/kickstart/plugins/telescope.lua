@@ -62,7 +62,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
       function()
         require('telescope.builtin').grep_string()
       end,
-      desc = '[f]ind current [W]ord',
+      desc = '[F]ind current [W]ord',
     },
     {
       '<leader>/',
@@ -82,14 +82,14 @@ return { -- Fuzzy Finder (files, lsp, etc)
           prompt_title = 'Live Grep in Open Files',
         }
       end,
-      desc = '[F]earch [/] in Open Files',
+      desc = '[F]ind [/] in Open Files',
     },
     {
       '<leader>fn',
       function()
         require('telescope.builtin').find_files { cwd = vim.fn.stdpath 'config' }
       end,
-      desc = '[F]earch [N]eovim files',
+      desc = '[F]ind [N]eovim files',
     },
   },
   config = function()

@@ -1,4 +1,4 @@
-return {
+return { -- Treesitter text objects
   'nvim-treesitter/nvim-treesitter-textobjects',
   -- lazy = true,
   branch = 'main',

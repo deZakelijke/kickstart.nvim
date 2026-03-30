@@ -5,11 +5,11 @@ return { -- Select a virtual env automatically
   },
   ft = "python", -- Load when opening Python files
   keys = {
-    { '<leader>vs', '<cmd>VenvSelect<cr>', { desc = '[V]irtual [S]elect' } },
+    { '<leader>vs', '<cmd>VenvSelect<cr>', desc = '[V]irtual [S]elect' },
   },
-  opts = { -- this can be an empty lua table - just showing below for clarity.
-      search = {}, -- if you add your own searches, they go here.
-      options = {} -- if you add plugin options, they go here.
+  opts = {
+    search = {},
+    options = {},
   },
 }
 -- vim: ts=2 sts=2 sw=2 et

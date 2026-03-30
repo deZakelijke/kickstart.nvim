@@ -1,4 +1,4 @@
-return {
+return { -- AI coding assistant
   'folke/sidekick.nvim',
   opts = {
     -- add any options here
@@ -34,7 +34,7 @@ return {
       function()
         require('sidekick.cli').toggle()
       end,
-      desc = 'Sidekick Toggle CLI',
+      desc = '[A]gent [A]ssistant CLI Toggle',
     },
     {
       '<leader>as',
@@ -43,14 +43,14 @@ return {
       end,
       -- Or to select only installed tools:
       -- require("sidekick.cli").select({ filter = { installed = true } })
-      desc = 'Select CLI',
+      desc = '[A]gent [S]elect CLI',
     },
     {
       '<leader>ad',
       function()
         require('sidekick.cli').close()
       end,
-      desc = 'Detach a CLI Session',
+      desc = '[A]gent [D]etach CLI Session',
     },
     {
       '<leader>at',
@@ -58,14 +58,14 @@ return {
         require('sidekick.cli').send { msg = '{this}' }
       end,
       mode = { 'x', 'n' },
-      desc = 'Send This',
+      desc = '[A]gent Send [T]his',
     },
     {
       '<leader>af',
       function()
         require('sidekick.cli').send { msg = '{file}' }
       end,
-      desc = 'Send File',
+      desc = '[A]gent Send [F]ile',
     },
     {
       '<leader>av',
@@ -73,7 +73,7 @@ return {
         require('sidekick.cli').send { msg = '{selection}' }
       end,
       mode = { 'x' },
-      desc = 'Send Visual Selection',
+      desc = '[A]gent Send [V]isual Selection',
     },
     {
       '<leader>ap',
@@ -81,7 +81,7 @@ return {
         require('sidekick.cli').prompt()
       end,
       mode = { 'n', 'x' },
-      desc = 'Sidekick Select Prompt',
+      desc = '[A]gent Select [P]rompt',
     },
     -- Example of a keybinding to open Claude directly
     {
@@ -89,7 +89,7 @@ return {
       function()
         require('sidekick.cli').toggle { name = 'claude', focus = true }
       end,
-      desc = 'Sidekick Toggle Claude',
+      desc = '[A]gent Toggle [C]laude',
     },
   },
 }
