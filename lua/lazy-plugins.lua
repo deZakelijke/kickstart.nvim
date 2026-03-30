@@ -51,6 +51,8 @@ require('lazy').setup({
 
   require 'kickstart.plugins.lazygit',
 
+  require 'kickstart.plugins.blink',
+
   require 'kickstart.plugins.copilot',
 
   require 'kickstart.plugins.copilot_chat',
