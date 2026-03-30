@@ -59,7 +59,7 @@ require('lazy').setup({
 
   require 'kickstart.plugins.copilot_chat',
 
-  require 'kickstart.plugins.avante',
+  require 'kickstart.plugins.sidekick',
 
   require 'kickstart.plugins.oil',
 
