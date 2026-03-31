@@ -37,7 +37,18 @@ return { -- Treesitter text objects
     vim.keymap.set({ 'x', 'o' }, 'il', function()
       select.select_textobject '@loop.inner'
     end, { desc = 'Select inner part of a loop' })
-
+    vim.keymap.set({ 'x', 'o' }, 'am', function()
+      select.select_textobject('@function.outer', 'textobjects')
+    end, { desc = 'Select outer part of a method/function' })
+    vim.keymap.set({ 'x', 'o' }, 'im', function()
+      select.select_textobject('@function.inner', 'textobjects')
+    end, { desc = 'Select inner part of a method/function' })
+    vim.keymap.set({ 'x', 'o' }, 'ac', function()
+      select.select_textobject('@class.outer', 'textobjects')
+    end, { desc = 'Select outer part of a class' })
+    vim.keymap.set({ 'x', 'o' }, 'ic', function()
+      select.select_textobject('@class.inner', 'textobjects')
+    end, { desc = 'Select inner part of a class' })
     -- Move keymaps
     vim.keymap.set('n', ']f', function()
       move.goto_next_start '@call.outer'
@@ -54,6 +65,19 @@ return { -- Treesitter text objects
     vim.keymap.set('n', ']l', function()
       move.goto_next_start '@loop.outer'
     end, { desc = 'Next loop start' })
+
+    local ts_repeat_move = require 'nvim-treesitter-textobjects.repeatable_move'
+
+    -- Repeat movement with ; and ,
+    -- vim way: ; goes to the direction you were moving.
+    vim.keymap.set({ 'n', 'x', 'o' }, ';', ts_repeat_move.repeat_last_move, { desc = 'Repeat last move' })
+    vim.keymap.set({ 'n', 'x', 'o' }, ',', ts_repeat_move.repeat_last_move_opposite, { desc = 'Repeat last move opposite' })
+
+    -- Make builtin f, F, t, T also repeatable with ; and ,
+    vim.keymap.set({ 'n', 'x', 'o' }, 'f', ts_repeat_move.builtin_f_expr, { expr = true, desc = 'Move to next char' })
+    vim.keymap.set({ 'n', 'x', 'o' }, 'F', ts_repeat_move.builtin_F_expr, { expr = true, desc = 'Move to prev char' })
+    vim.keymap.set({ 'n', 'x', 'o' }, 't', ts_repeat_move.builtin_t_expr, { expr = true, desc = 'Move before next char' })
+    vim.keymap.set({ 'n', 'x', 'o' }, 'T', ts_repeat_move.builtin_T_expr, { expr = true, desc = 'Move before prev char' })
   end,
 }
 -- vim: ts=2 sts=2 sw=2 et
