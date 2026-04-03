@@ -1,10 +1,8 @@
 return { -- Undo history viewer
   'debugloop/telescope-undo.nvim',
   dependencies = {
-    {
-      'nvim-telescope/telescope.nvim',
-      dependencies = { 'nvim-lua/plenary.nvim' },
-    },
+    'nvim-lua/plenary.nvim',
+    'nvim-telescope/telescope.nvim',
   },
   keys = {
     {
@@ -18,7 +16,6 @@ return { -- Undo history viewer
     extensions = {
       undo = {
         use_delta = true,
-        use_custom_command = nil, -- setting this implies `use_delta = false`. Accepted format is: { "bash", "-c", "echo '$DIFF' | delta" }
         side_by_side = false,
         vim_diff_opts = {
           ctxlen = vim.o.scrolloff,
